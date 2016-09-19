@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
   def index
   end
-  def about
+  def howitworks
   end
 end

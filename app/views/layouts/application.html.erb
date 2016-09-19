@@ -8,7 +8,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="/">The Protagonist Collective</a></h1>
+    </div>
+    <p id="top">Build your collective adventure.</p>
+    <ul id="menu">
+      <li><a class="current" href="/">Home</a></li>
+      <li><a href="/howitworks">How it Works</a></li>
+      <li><a href="/adventures">Adventures List</a></li>
+      <li><a class="loggedout" href="/login">Login or Signup</a></li>
+    </ul>
+  </div>
+  <div id="content">
     <%= yield %>
-  </body>
+  </div>
+  <div id="footer">
+    <p>&copy; Copyright <a href="http://www.davidnoahball.com/">David Noah Ball</a></p>
+  </div>
+</div>
+</body>
 </html>
