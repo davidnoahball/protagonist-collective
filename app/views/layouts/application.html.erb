@@ -15,11 +15,11 @@
     </div>
     <p id="top">Build your collective adventure.</p>
     <ul id="menu">
-      <li><a class="current" href="/">Home</a></li>
-      <li><a href="/howitworks">How it Works</a></li>
-      <li><a href="/adventures">Adventures List</a></li>
+      <li><%= nav_link 'Home', root_path %></li>
+      <li><%= nav_link 'How it Works', howitworks_path %></li>
+      <li><%= nav_link 'Adventures List', '/adventures' %></li>
       <% if session[:user_id] %>
-        <li><a href="/users/<%= session[:user_id] %>"><%= User.find(session[:user_id]).name %></a>
+        <li><%= nav_link 'Your Profile', user_path(session[:user_id]) %></li>
       <% else %>
         <li><a class="loggedout" href="/login">Login or Signup</a></li>
       <% end %>
