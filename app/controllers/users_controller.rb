@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
   def login
   end
+  def show
+  end
 
   private
   def user_params
