@@ -1,4 +1,5 @@
-show.html.erb
+show.html.erb<br>
+<%= User.find(session[:user_id]).name %>
 <%= form_for :user, url: "/logout" do |f| %>
   <%= f.submit "Logout" %>
 <% end %>
