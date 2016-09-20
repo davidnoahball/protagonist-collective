@@ -18,6 +18,9 @@
       <li><a class="current" href="/">Home</a></li>
       <li><a href="/howitworks">How it Works</a></li>
       <li><a href="/adventures">Adventures List</a></li>
+      <% if session[:user_id] %>
+        <li><a href="/users/<%= session[:user_id] %>"><%= User.find(session[:user_id]).name %></a>
+      <% end %>
       <li><a class="loggedout" href="/login">Login or Signup</a></li>
     </ul>
   </div>
