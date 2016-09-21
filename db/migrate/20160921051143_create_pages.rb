@@ -10,7 +10,7 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.string :choice1
       t.string :choice2
       t.integer :adventure_id
-      t.integer :author_id
+      t.integer :user_id
 
       t.timestamps
     end

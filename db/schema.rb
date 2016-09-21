@@ -14,8 +14,9 @@ ActiveRecord::Schema.define(version: 20160921052427) do
 
   create_table "adventures", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "critical_size"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160921052427) do
     t.string   "choice1"
     t.string   "choice2"
     t.integer  "adventure_id"
-    t.integer  "author_id"
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
