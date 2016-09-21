@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20160921052427) do
     t.string   "body"
     t.string   "choice1"
     t.string   "choice2"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "adventure_id"
+    t.integer  "author_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
