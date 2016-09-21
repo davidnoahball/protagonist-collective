@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :adventures, only: [:show] do
-    resources :pages, only: [:show, :edit]
+    resources :pages, only: [:show, :edit, :new]
   end
   resources :users
   root 'site#index'

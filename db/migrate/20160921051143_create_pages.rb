@@ -4,7 +4,6 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.integer :child1_id
       t.integer :child2_id
       t.integer :parent_id
-      t.boolean :end
       t.string :body
       t.string :end
       t.string :choice1
