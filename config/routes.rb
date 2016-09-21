@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :adventures
+  resources :pages
   resources :users
   root 'site#index'
   get '/howitworks', to: 'site#howitworks'

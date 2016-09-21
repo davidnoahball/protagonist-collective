@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920004614) do
+ActiveRecord::Schema.define(version: 20160921052427) do
+
+  create_table "adventures", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "child1_id"
+    t.integer  "child2_id"
+    t.integer  "parent_id"
+    t.string   "end"
+    t.string   "body"
+    t.string   "choice1"
+    t.string   "choice2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.integer  "usertype",         default: 0
