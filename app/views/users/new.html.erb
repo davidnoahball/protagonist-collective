@@ -2,7 +2,7 @@
 
 <%= form_for :user, url: '/users' do |f| %>
   Username: <%= f.text_field :name %><br>
-  Email: <%= f.text_field :email %><br>
+  Email: <%= f.text_field :email, placeholder: "optional" %><br>
   Password: <%= f.password_field :password %><br>
   Password Confirmation: <%= f.password_field :password_confirmation %><br>
   <%= f.submit "Submit" %>

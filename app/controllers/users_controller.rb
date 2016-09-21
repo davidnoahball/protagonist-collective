@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   def create
-    user = User.new(user_params).save
+    user = User.new(user_params)
 
-    @user = User.find_by(name: params[:user][:name])
-    return head(:forbidden) unless @user.authenticate(params[:user][:password])
-    session[:user_id] = @user.id
+    if user.save
+      @user = User.find_by(name: params[:user][:name])
+      return head(:forbidden) unless @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+    else
+      return redirect_to '/signup'
+    end
     
     redirect_to "/"
   end
