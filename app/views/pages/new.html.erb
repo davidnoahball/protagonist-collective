@@ -1,9 +1,16 @@
 <%= form_for @page, url: "/adventures/:adventure_id/pages/new" do |f| %>
 <%= f.hidden_field :adventure_id %>
 <%= f.hidden_field :parent_id %>
+<%= f.hidden_field :user_id %>
 <%= f.label "Body Text" %>
-<%= f.text_area :body %>
-<%= f.submit %>
+<%= f.text_area :body %><br>
+<%= f.label "Ending" %>
+<%= f.text_field :end %><br>
+<%= f.label "Choice 1" %>
+<%= f.text_field :choice1 %><br>
+<%= f.label "Choice 2" %>
+<%= f.text_field :choice2 %><br>
+<%= f.submit "submit", data: {confirm: "You are about to submit. Are you sure?"} %>
 <% end %>
 
 <%= session[:parent_id] %>

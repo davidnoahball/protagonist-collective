@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login'
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy', as: 'signout'
+  post '/adventures/:adventure_id/pages/new', to: 'pages#create'
 
   resources :sessions, only: [:create, :destroy]
   get 'auth/:provider/callback', to: 'sessions#create'
