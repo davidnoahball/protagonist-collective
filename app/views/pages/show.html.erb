@@ -26,14 +26,14 @@
       <% if @page.child1_id %>
         <a href="/adventures/<%= @page.adventure.id %>/pages/<%= @page.child1_id %>"><%= @page.choice1 %></a>
       <% else %>
-        <ghil style="border-style:solid; border-color:red; border-width:1px"><%= link_to @page.choice1, new_adventure_page_path %></ghil>
+        <ghil style="border-style:solid; border-color:red; border-width:1px"><%= link_to @page.choice1, new_adventure_page_path(:option => 1) %></ghil>
       <% end %>
     </span>
     <span style="float:right">
       <% if @page.child2_id %>
         <a href="/adventures/<%= @page.adventure.id %>/pages/<%= @page.child2_id %>"><%= @page.choice2 %></a>
       <% else %>
-        <ghil style="border-style:solid; border-color:red; border-width:1px"><%= link_to @page.choice2, new_adventure_page_path %></ghil>
+        <ghil style="border-style:solid; border-color:red; border-width:1px"><%= link_to @page.choice2, new_adventure_page_path(:option => 2) %></ghil>
       <% end %>
     </span>
   <% end %>

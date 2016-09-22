@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     session[:parent_id] = @page.id
   end
   def new
+    session[:option] = params[:option]
     @page = Page.new(adventure_id: params[:adventure_id], parent_id: session[:parent_id], user_id: session[:user_id])
   end
   def create
