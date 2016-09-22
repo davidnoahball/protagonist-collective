@@ -17,11 +17,19 @@ class PagesController < ApplicationController
       @page.errors.add(:end, :not_valid, message: "can't have an ending and choices!")
     end
     if !@page.errors.any? && @page.save
-      #Page.find(@page.parent_id) ignore for now
+      if session[:option] == "1"
+        par = Page.find(@page.parent_id)
+        par.child1_id = @page.id
+        par.save!
+      elsif session[:option] == "2"
+        par = Page.find(@page.parent_id)
+        par.child2_id = @page.id
+        par.save!
+      end
     else
       return render :new
     end
-    redirect_to adventure_page_path(@page)
+    redirect_to "/adventures/#{@page.adventure_id}/pages/#{@page.id}"
   end
 
   private
