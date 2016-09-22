@@ -1,3 +1,17 @@
+<% if @page && @page.errors.any? %>
+  <div id="error_explanation" style="border-color:red; border-width:1px; border-style:solid; padding:2em">
+    <b>
+      <%= pluralize(@page.errors.count, "error") %>
+      prohibited your account from being created:
+    </b>
+    <br>
+    <% @page.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+  <br>
+<% end %>
+
 <%= form_for @page, url: "/adventures/:adventure_id/pages/new" do |f| %>
 <%= f.hidden_field :adventure_id %>
 <%= f.hidden_field :parent_id %>
@@ -12,5 +26,3 @@
 <%= f.text_field :choice2 %><br>
 <%= f.submit "submit", data: {confirm: "You are about to submit. Are you sure?"} %>
 <% end %>
-
-<%= session[:parent_id] %>
