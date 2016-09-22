@@ -1,0 +1,9 @@
+<%= form_for @page, url: "/adventures/:adventure_id/pages/new" do |f| %>
+<%= f.hidden_field :adventure_id %>
+<%= f.hidden_field :parent_id %>
+<%= f.label "Body Text" %>
+<%= f.text_area :body %>
+<%= f.submit %>
+<% end %>
+
+<%= session[:parent_id] %>

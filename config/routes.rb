@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :adventures, only: [:show] do
-    resources :pages, only: [:show, :edit, :new]
+    resources :pages, only: [:show, :edit, :new, :create]
   end
   resources :users
+  #resources :pages
   root 'site#index'
   get '/howitworks', to: 'site#howitworks'
   get '/signup', to: 'users#new'
