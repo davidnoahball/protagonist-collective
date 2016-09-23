@@ -17,4 +17,7 @@ class Page < ApplicationRecord
   def self.count
     Page.all.count
   end
+  def end?
+    self.end ? true : false
+  end
 end

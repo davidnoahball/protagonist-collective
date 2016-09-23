@@ -21,4 +21,13 @@ class User < ApplicationRecord
       user.save!(:validate => false)
     end
   end
+
+  def ends_available(adventure)
+    count = 0
+    submitted = adventure.pages.where("user_id = ?", self.id)
+    submitted.each do |page|
+      if page.end? then count += 1 end
+    end
+    return submitted.size - count
+  end
 end
