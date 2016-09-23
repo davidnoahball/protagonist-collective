@@ -30,4 +30,8 @@ class User < ApplicationRecord
     end
     return submitted.size - count
   end
+
+  def ends_available?(adventure)
+    return self.ends_available(adventure) > 0
+  end
 end
