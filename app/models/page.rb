@@ -20,4 +20,19 @@ class Page < ApplicationRecord
   def end?
     self.end ? true : false
   end
+  def path
+    "/adventures/#{self.adventure.id}/pages/#{self.id}"
+  end
+  def parent_path
+    "/adventures/#{self.adventure.id}/pages/#{self.parent_id}"
+  end
+  def child1_path
+    "/adventures/#{self.adventure.id}/pages/#{self.child1_id}"
+  end
+  def child2_path
+    "/adventures/#{self.adventure.id}/pages/#{self.child2_id}"
+  end
+  def user_path
+    "/users/#{self.user.id}"
+  end
 end

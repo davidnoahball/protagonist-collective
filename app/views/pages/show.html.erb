@@ -1,39 +1,41 @@
-<a href="/adventures/<%= @page.adventure_id %>/pages/1"><%= @page.adventure.title %></a><br>
-<div style="border-style:solid; border-color:red; border-width:1px">
+<a href=<%= @page.adventure.root_path %>><%= @page.adventure.title %></a><br>
+<div class="bordered">
   <br>
   <% if @page.parent_id %>
   <span style="float:left">
-    <a href="/adventures/<%= @page.adventure.id %>/pages/<%= @page.parent_id %>">Last page</a>
+    <a href=<%= @page.parent_path %>>Last page</a>
   </span>
   <% end %>
   <% if @page.user %>
-  <span style="float:right">Written by: <a href="<%= user_path(@page.user) %>"><%= @page.user.name %></a></span>
+  <span style="float:right">
+    Written by: <a href=<%= @page.user_path %>><%= @page.user.name %></a>
+  </span>
   <% end %>
   <div style="clear:both"><br></div>
 </div>
 
-<div style="border-style:solid; border-color:blue; border-width:1px">
+<div class="bordered">
   <%= simple_format(@page.body) %>
 </div>
 
-<div style="border-style:solid; border-color:green; border-width:1px; width:50%; margin:auto">
+<div class="bordered" style="width:50%; margin:auto">
   <br>
   <% if @page.end? %>
     <b><%= @page.end %></b><br>
-    <a href="/adventures/<%= @page.adventure.id %>/pages/1">Play again?</a>
+    <a href=<%= @page.adventure.root_path %>>Play again?</a>
   <% else %>
     <span style="float:left">
       <% if @page.child1_id %>
-        <a href="/adventures/<%= @page.adventure.id %>/pages/<%= @page.child1_id %>"><%= @page.choice1 %></a>
+        <a href=<%= @page.child1_path %>><%= @page.choice1 %></a>
       <% else %>
-        <ghil style="border-style:solid; border-color:red; border-width:1px"><%= link_to @page.choice1, new_adventure_page_path(:option => 1) %></ghil>
+        <ghil class="bordered"><%= link_to @page.choice1, new_adventure_page_path(:option => 1) %></ghil>
       <% end %>
     </span>
     <span style="float:right">
       <% if @page.child2_id %>
-        <a href="/adventures/<%= @page.adventure.id %>/pages/<%= @page.child2_id %>"><%= @page.choice2 %></a>
+        <a href=<%= @page.child2_path %>><%= @page.choice2 %></a>
       <% else %>
-        <ghil style="border-style:solid; border-color:red; border-width:1px"><%= link_to @page.choice2, new_adventure_page_path(:option => 2) %></ghil>
+        <ghil class="bordered"><%= link_to @page.choice2, new_adventure_page_path(:option => 2) %></ghil>
       <% end %>
     </span>
   <% end %>
