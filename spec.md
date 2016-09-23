@@ -11,10 +11,11 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
   - Pages have many user-submittable attributes, e.g. body
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-  - Users, Adventures, and Pages all have validations.
-- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+  - Users and Pages both have validations.
+- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
   - Sum site stats on main page, URL: '/'
 - [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
+  - Adventure new form writes to the Page model.
 - [x] Include signup (how e.g. Devise)
   - /signup
 - [x] Include login (how e.g. Devise)
