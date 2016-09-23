@@ -38,3 +38,5 @@ ul { margin: .6em 0; padding: 0;}
   margin: 2em 3%; 
   text-align: right;
 }
+
+.field_with_errors {display: inline;}

@@ -14,15 +14,20 @@ class PagesController < ApplicationController
     }
     @page = Page.new(filtered)
     if filtered[:end] && (filtered[:choice1] || filtered[:choice2])
-      @page.errors.add(:end, :not_valid, message: "can't have an ending and choices!")
+      @page.errors.add(:end, :not_valid, message: ": You can't have an ending and choices!")
+    end
+    if !(filtered[:end] || filtered[:choice1] || filtered[:choice2])
+      @page.errors.add(:end, :not_valid, message: ": You need either an ending or choices!")
+    end
+    par = Adventure.find(filtered[:adventure_id]).pages.find(filtered[:parent_id])
+    if (par.child1_id != nil && session[:option] == "1") || (par.child2_id != nil && session[:option] == "2")
+      return redirect_to "/"
     end
     if !@page.errors.any? && @page.save
       if session[:option] == "1"
-        par = Page.find(@page.parent_id)
         par.child1_id = @page.id
         par.save!
       elsif session[:option] == "2"
-        par = Page.find(@page.parent_id)
         par.child2_id = @page.id
         par.save!
       end

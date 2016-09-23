@@ -3,4 +3,5 @@ class Page < ApplicationRecord
   belongs_to :adventure
 
   validates :choice1, :choice2, :end, length: {in: 1..30}, allow_nil: true
+  validates :body, length: {in: 50..300}
 end
