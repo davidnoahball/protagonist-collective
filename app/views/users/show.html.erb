@@ -1,5 +1,6 @@
-show.html.erb<br>
-<%= User.find(session[:user_id]).name %>
+<%= @user.name %>
 <%= form_for :user, url: "/logout" do |f| %>
   <%= f.submit "Logout" %>
 <% end %>
+<br>
+<%= render(@user.pages) || "No pages written yet!" %>

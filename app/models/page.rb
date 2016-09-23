@@ -35,4 +35,7 @@ class Page < ApplicationRecord
   def user_path
     "/users/#{self.user.id}"
   end
+  def snip
+    self.body.split(" ")[0..10].join(" ")
+  end
 end

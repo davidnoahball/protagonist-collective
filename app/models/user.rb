@@ -22,10 +22,13 @@ class User < ApplicationRecord
     end
   end
 
+  def submitted(adventure)
+    submitted = adventure.pages.where("user_id = ?", self.id)
+  end
   def ends_available(adventure)
     count = 0
-    submitted = adventure.pages.where("user_id = ?", self.id)
-    submitted.each do |page|
+    subbed = self.submitted(adventure)
+    subbed.each do |page|
       if page.end? then count += 1 end
     end
     return submitted.size - count
