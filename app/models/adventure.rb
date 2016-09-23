@@ -2,6 +2,8 @@ class Adventure < ApplicationRecord
   has_many :pages
   has_many :users, through: :pages
 
+  validates :title, length: {in: 4...200}
+
   def root_path
     "/adventures/#{self.id}/pages/1"
   end
