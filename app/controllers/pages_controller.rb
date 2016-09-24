@@ -39,6 +39,28 @@ class PagesController < ApplicationController
     end
     redirect_to "/adventures/#{@page.adventure_id}/pages/#{@page.id}"
   end
+  def edit
+    if User.find(session[:user_id]).usertype == 0
+      redirect_to "/"
+    end
+    @page = Page.find(params[:id])
+  end
+  def update
+    if User.find(session[:user_id]).usertype == 0
+      redirect_to "/"
+    end
+    filtered = pages_params
+    filtered.delete_if {|k, v|
+      v.blank?
+    }
+    @page = Page.find(params[:id])
+    @page.update(filtered)
+    if @page.save
+      redirect_to @page.path
+    else
+      render :edit
+    end
+  end
 
   private
   def pages_params
