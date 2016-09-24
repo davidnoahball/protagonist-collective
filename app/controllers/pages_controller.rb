@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     if !(filtered[:end] || filtered[:choice1] || filtered[:choice2])
       @page.errors.add(:end, :not_valid, message: ": You need either an ending or choices!")
     end
-    if (@page.end && !(@page.adventure.critical? || @page.user.ends_available?(@page.adventure)))
+    if (@page.end && !(@page.adventure.critical? || @page.user.ends_available?(@page.adventure)) && User.find(session[:user_id]).usertype == 0)
       @page.errors.add(:end, :not_valid, message: ": You can't write an ending unless you have written a choices page or the adventure is critical!")
     end
     par = Adventure.find(filtered[:adventure_id]).pages.find(filtered[:parent_id])

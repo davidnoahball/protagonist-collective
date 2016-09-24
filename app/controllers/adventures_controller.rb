@@ -5,6 +5,9 @@ class AdventuresController < ApplicationController
     redirect_to Adventure.find(params[:id]).root_path
   end
   def new
+    if User.find(session[:user_id]).usertype == 0
+      redirect_to "/"
+    end
     @adventure = Adventure.new
   end
   def create
