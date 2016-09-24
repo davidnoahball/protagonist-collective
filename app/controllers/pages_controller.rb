@@ -22,6 +22,9 @@ class PagesController < ApplicationController
     if (@page.end && !(@page.adventure.critical? || @page.user.ends_available?(@page.adventure)) && User.find(session[:user_id]).usertype == 0)
       @page.errors.add(:end, :not_valid, message: ": You can't write an ending unless you have written a choices page or the adventure is critical!")
     end
+    if !(session[:user_id])
+      @page.errors.add(:body, :not_valid, message: ": You must be logged in to write a new page!")
+    end
     par = Adventure.find(filtered[:adventure_id]).pages.find(filtered[:parent_id])
     if (par.child1_id != nil && session[:option] == "1") || (par.child2_id != nil && session[:option] == "2")
       return redirect_to "/"

@@ -1,1 +1,19 @@
-howitworks.html.erb
+<div style="white-space:pre-wrap;">
+Again, when this site is published, there will be more information on this page. This is a brief outline with more of a technical focus for now.
+
+This site consists of three models: Aventures, Pages, and Users.
+
+On the Adventures List page, people can choose an Adventure to read. They follow a storyline by clicking on links corresponding to their choices. Their choices will eventually lead them to a point where an end to the adventure is reached, or, alternatively, they could find that the adventure is incomplete. If the adventure is complete, they have the option of restarting. If the adventure is incomplete, they are faced with the option to continue the adventure through the Page New form. From here, they can write a new page that either completes that storyline or presents a new choice.
+
+However, to preserve a proper structure for the stories and make sure that stories are not too short, a User can only write an ending page on an adventure if they've already written a choice page for that same adventure. Then, once a certain number of pages has been reached (referred to as critical_size in the database), all Users may write endings as they see fit. This allows for all storylines to be wrapped up and prevent chains that become too long and boring to read.
+
+Another important note is that people can use the site and follow story lines without having a User account, but they won't be able to create pages, only read them. On a related notes, people are unable to edit their posts after creating them because it could break the story. Moderators (those with a usertype other than '0', only creatable through a console), however, are able to edit posts and create new adventures at will.
+
+There are other features of the site, such as being able to see a list of contributions on your User Show page and seeing when an adventure will go critical on the Adventure Index page, but nothing major related to the mechanics of the website.
+
+Before this web-app goes public, this page will have an explanation of the basic usage and conventions of the site in video form, with a text-based supplement for details.
+</div>
+
+<% 10.times do %>
+  <br>
+<% end %>
