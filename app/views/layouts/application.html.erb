@@ -25,9 +25,9 @@
       <% end %>
       <% if params[:adventure_id] && session[:user_id] %>
         <% if Adventure.find(params[:adventure_id]).critical? %>
-          <li style="float:right;">This Adventure is critical!</li>
+          <li style="float:right;">This Adventure is <b>critical!</b></li>
         <% else %>
-          <li style="float:right;">You have <b><%= User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])) %></b> endings available.</li>
+          <li style="float:right;">You have <b> <%= pluralize(User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])), "ending") %></b> available.</li>
         <% end %>
       <% end %>
     </ul>

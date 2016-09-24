@@ -29,10 +29,10 @@ class PagesController < ApplicationController
     if !@page.errors.any? && @page.save
       if session[:option] == "1"
         par.child1_id = @page.id
-        par.save!
+        par.save!(:validate => false)
       elsif session[:option] == "2"
         par.child2_id = @page.id
-        par.save!
+        par.save!(:validate => false)
       end
     else
       return render :new

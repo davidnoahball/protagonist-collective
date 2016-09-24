@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :adventures, only: [:show, :index] do
+  resources :adventures, only: [:show, :index, :new] do
     resources :pages, only: [:show, :edit, :new, :create]
   end
   resources :users
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy', as: 'signout'
   post '/adventures/:adventure_id/pages/new', to: 'pages#create'
+  post '/adventures', to: 'adventures#create'
 
   resources :sessions, only: [:create, :destroy]
   get 'auth/:provider/callback', to: 'sessions#create'
