@@ -23,7 +23,7 @@
       <% else %>
         <li><a class="loggedout" href="/login">Login or Signup</a></li>
       <% end %>
-      <% if params[:adventure_id] && params[:adventure_id] != "new" && session[:user_id] %>
+      <% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
         <% if Adventure.find(params[:adventure_id]).critical? %>
           <li style="float:right;">This Adventure is <b>critical!</b></li>
         <% else %>
