@@ -26,12 +26,17 @@ class User < ApplicationRecord
     adventure.pages.where("user_id = ?", self.id)
   end
   def ends_available(adventure)
-    count = 0
+    ends = 0
+    choices = 0
     subbed = self.submitted(adventure)
     subbed.each do |page|
-      if page.end? then count += 1 end
+      if page.end?
+        ends += 1
+      else
+        choices += 1
+      end
     end
-    return subbed.size - count
+    return choices - ends
   end
 
   def ends_available?(adventure)
