@@ -14,7 +14,7 @@ class AdventuresController < ApplicationController
     filtered = adventure_params
     filtered[:critical_size] = filtered[:critical_size].to_i
     a = Adventure.new(filtered)
-    a.save!(:validate => false)
+    a.save
     redirect_to "/adventures"
   end
 
