@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   #resources :pages
   root 'site#index'
   get '/howitworks', to: 'site#howitworks'
-  get '/signup', to: 'users#new'
   get '/login', to: 'users#login'
-  post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy', as: 'signout'
   post '/adventures/:adventure_id/pages/new', to: 'pages#create'
   post '/adventures', to: 'adventures#create'

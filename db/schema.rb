@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 20160921052427) do
   create_table "users", force: :cascade do |t|
     t.integer  "usertype",         default: 0
     t.string   "name"
-    t.string   "password_digest"
-    t.string   "email"
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"

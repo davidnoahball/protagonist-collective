@@ -3,8 +3,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       t.integer :usertype, default: 0
       t.string :name
-      t.string :password_digest
-      t.string :email
       t.string :provider
       t.string :uid
       t.string :oauth_token
