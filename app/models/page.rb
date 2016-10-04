@@ -59,7 +59,17 @@ class Page < ApplicationRecord
   def user_path
     "/users/#{self.user.id}"
   end
-  def snip
-    self.body.split(" ")[0..10].join(" ")
+  def parent
+    Page.all.find(self.parent_id)
+  end
+  def choice_text
+    text = ""
+    par = self.parent
+    if par.child1_id == self.id
+      text = par.choice1
+    else
+      text = par.choice2
+    end
+    text
   end
 end
