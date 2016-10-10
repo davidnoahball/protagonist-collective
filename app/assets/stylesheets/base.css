@@ -16,5 +16,22 @@ a.current {
 
 .secondary-header{
   background: black !important;
+  color: white !important;
   top:50px !important;
+  line-height: 50px;
 }
+.secondary-left {
+  float: left;
+  width:33.33333%;
+  text-align:left;
+}
+.secondary-center {
+  float: left;
+  width:33.33333%;
+  text-align:center;
+}
+.secondary-right {
+ float: left;
+ width:33.33333%;
+ text-align:right;
+}​
