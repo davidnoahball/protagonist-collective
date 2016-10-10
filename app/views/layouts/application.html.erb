@@ -8,40 +8,38 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 <body>
-<div id="wrapper">
-  <div id="header">
-    <div id="logo">
-      <h1><a href="/">The Protagonist Collective</a></h1>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><%= nav_link 'Home', root_path %></li>
+          <li><%= nav_link 'How it Works', howitworks_path %></li>
+          <li><%= nav_link 'Adventures List', '/adventures' %></li>
+        </ul>
+      </div>
     </div>
-    <p id="top">Build your collective adventure.</p>
-    <ul id="menu">
-      <li><%= nav_link 'Home', root_path %></li>
-      <li><%= nav_link 'How it Works', howitworks_path %></li>
-      <li><%= nav_link 'Adventures List', '/adventures' %></li>
-      <% if session[:user_id] %>
-        <li><%= nav_link 'Your Profile', user_path(session[:user_id]) %></li>
-      <% else %>
-        <li><a class="loggedout" href="/login">Login or Signup</a></li>
-      <% end %>
-      <% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
-        <% if Adventure.find(params[:adventure_id]).critical? %>
-          <li style="float:right;">This Adventure is <b>critical!</b></li>
-        <% else %>
-          <li style="float:right;">You have <b> <%= pluralize(User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])), "ending") %></b> available.</li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
-  <div id="content">
-    <div class="full">
 
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><%= nav_link 'Home', root_path %></li>
+          <li><%= nav_link 'How it Works', howitworks_path %></li>
+          <li><%= nav_link 'Adventures List', '/adventures' %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container body-drop">
+    <div class="jumbotron">
       <%= yield %>
-
     </div>
   </div>
-  <div id="footer">
-    <p>&copy; Copyright <a href="http://www.davidnoahball.com/">David Noah Ball</a></p>
-  </div>
-</div>
 </body>
 </html>

@@ -41,3 +41,11 @@ ul { margin: .6em 0; padding: 0;}
 
 .field_with_errors {display: inline;}
 .bordered {border-style:solid; border-color:red; border-width:1px}
+
+
+
+
+.body-drop{
+  position:relative;
+  top:100px;
+}
