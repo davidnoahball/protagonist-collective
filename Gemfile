@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'omniauth'
 gem "omniauth-google-oauth2", "~> 0.2.1"
