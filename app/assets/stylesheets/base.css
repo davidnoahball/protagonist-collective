@@ -1,51 +1,17 @@
+
 body { color: #303030; background: #ebebeb; font: 1em Arial, Verdana, sans-serif; text-align: center; line-height: 1.6em; margin: 2.5em 0; }
-a { color: #214466; background: inherit; }
-a:hover { color: #000; background: inherit; }
-ul { margin: .6em 0; padding: 0;}
-.clear {  clear: both; margin: 0 0 .5em 0; }
-
-#wrapper { width: 90%; margin: 0 auto; text-align: left; max-width: 1200px; min-width: 800px; height: auto; min-height: 100%}
-
-#header {position: fixed; background: #ebebeb; width: inherit; max-width: 1200px; min-width: 800px; padding-top: 100px; margin-top: -213px;}
-#content {
-  margin-top: 146px;
-}
-
-#logo h1 {
-  float: left;
-  color: #000;
-  background: inherit;
-  margin: 0 0 .8em .3em;
-  padding: 0;
-  font-size: 2.4em;
-}
-  
-#top {
-  float: right;
-  margin: 0 2em 0 0;
-}
-      
-#menu { clear: both; margin: 0 2% 1em 1%; padding: 7px 0 7px 0; border-bottom: 1px solid #DCDBD5; border-top: 1px solid #DCDBD5;}
-#menu li { display: inline; }
-#menu a { padding: 3px 15px; margin: 0 3px 0 0; text-decoration: none; color: #808080; background: inherit; }
-#menu a.loggedout {color: #fff; background: green;}
-#menu a.current { color: #fff; background: #3D648A; }
-#menu a:hover { background: #fff; color: #444;}
-      
-.full { background: #fff; padding: 2em 5em; margin: 0 1%; text-align: center; }
-
-#footer { 
-  margin: 2em 3%; 
-  text-align: right;
-}
 
 .field_with_errors {display: inline;}
 .bordered {border-style:solid; border-color:red; border-width:1px}
 
-
-
-
 .body-drop{
   position:relative;
   top:100px;
+}
+
+a.current { color: black !important; }
+
+.secondary-header{
+  background: black !important;
+  top:50px !important;
 }
