@@ -9,7 +9,10 @@ body { color: #303030; background: #ebebeb; font: 1em Arial, Verdana, sans-serif
   top:100px;
 }
 
-a.current { color: black !important; }
+a.current {
+  color: black !important; 
+  box-shadow:0px -5px 0px -2px black inset;
+}
 
 .secondary-header{
   background: black !important;
