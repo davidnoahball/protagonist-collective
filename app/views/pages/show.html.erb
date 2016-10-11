@@ -1,3 +1,11 @@
+<%= render 'header', 
+  left: "<a class='btn btn-primary' href='#{@page.parent_path}' role='button'>
+    <span class='glyphicon glyphicon-triangle-left' aria-hidden='true'></span> Last Page
+  </a>", 
+  center: "<a href=#{@page.adventure.root_path} style='color:white; text-decoration: underline;'>#{@page.adventure.title}</a>", 
+  right: ""#Here will go the main Bookmark Mechanics in a tooltip / toggle combo.
+%>
+
 <div class="container body-drop">
   <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
 

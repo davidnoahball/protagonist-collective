@@ -48,7 +48,11 @@ class Page < ApplicationRecord
     "/adventures/#{self.adventure.id}/pages/#{self.id}"
   end
   def parent_path
-    "/adventures/#{self.adventure.id}/pages/#{self.parent_id}"
+    if self.parent_id
+      "/adventures/#{self.adventure.id}/pages/#{self.parent_id}"
+    else
+      self.path
+    end
   end
   def child1_path
     "/adventures/#{self.adventure.id}/pages/#{self.child1_id}"
