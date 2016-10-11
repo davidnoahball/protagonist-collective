@@ -1,3 +1,6 @@
+<div class="container body-drop">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
+
 <%= form_for @adventure do |f| %>
   <%= f.label "Title" %>
   <%= f.text_field :title %><br>
@@ -13,3 +16,11 @@
   <% end %>
   <%= f.submit "submit", data: {confirm: "You are about to submit. Are you sure?"} %>
 <% end %>
+
+  </div>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>

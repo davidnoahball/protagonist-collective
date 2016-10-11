@@ -18,6 +18,13 @@
           <li><%= nav_link 'Home', root_path %></li>
           <li><%= nav_link 'How it Works', howitworks_path %></li>
           <li><%= nav_link 'Adventures List', '/adventures' %></li>
+
+          <% if session[:user_id] %>
+            <li><%= nav_link 'Your Profile', user_path(session[:user_id]) %></li>
+          <% else %>
+            <li><a href="/login">Login or Signup</a></li>
+          <% end %>
+
         </ul>
       </div>
     </div>

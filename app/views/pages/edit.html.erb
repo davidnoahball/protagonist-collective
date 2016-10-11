@@ -1,3 +1,6 @@
+<div class="container body-drop">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
+
 <% if @page && @page.errors.any? %>
   <div id="error_explanation" style="border-color:red; border-width:1px; border-style:solid; padding:2em">
     <b>
@@ -25,3 +28,11 @@
 
 <%= f.submit "submit", data: {confirm: "You are about to submit. Are you sure?"} %>
 <% end %>
+
+  </div>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
