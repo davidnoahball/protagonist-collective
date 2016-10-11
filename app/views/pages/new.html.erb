@@ -42,8 +42,7 @@
 
 
 
-<% 
-=begin %>
+<% if false %>
 
 <% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
   <% if Adventure.find(params[:adventure_id]).critical? %>
@@ -53,5 +52,4 @@
   <% end %>
 <% end %>
 
-<% 
-=end %>
+<% end %>

@@ -7,7 +7,39 @@
 %>
 
 <div class="container body-drop">
-  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px; position:relative">
+
+<div style="">
+  <div class="" style="padding-bottom:100px;">
+    <%= simple_format(@page.body) %>
+  </div>
+  <div class="" style="position:absolute; bottom:0; height:150px; width:calc(100% - 120px); text-align:center">
+
+    <div class="" style="width:calc(100% + 120px); position:relative; top:0; right:60px; border-top: 3px solid black;">&nbsp</div>
+
+    <div class="bordered" style="">
+      <br>
+      <% if @page.end? %>
+        <%= render 'end' %>
+      <% else %>
+        <%= render 'choices' %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+  </div> <%# Jumbotron %>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% if false %>
 
 <a href=<%= @page.adventure.root_path %>><%= @page.adventure.title %></a><br>
 <div class="bordered">
@@ -23,10 +55,6 @@
   </span>
   <% end %>
   <div style="clear:both"><br></div>
-</div>
-
-<div class="bordered">
-  <%= simple_format(@page.body) %>
 </div>
 
 <div class="bordered" style="width:75%; margin:auto">
@@ -53,10 +81,4 @@
   <div style="clear:both"><br></div>
 </div>
 
-  </div>
-  <div>
-    <% 2.times do %>
-      <br>
-    <% end %>
-  </div>
-</div>
+<% end %>
