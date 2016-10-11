@@ -1,5 +1,12 @@
-_choices.html.erb
+<div style="font-weight:bold; font-size:1.5em;"><%= page.end %></div>
+<br>
+<div>
+  <a class='btn btn-primary btn-lg' href=<%= @page.adventure.root_path %> role='button'>
+    <span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Play again?
+  </a>
+</div>
 
+<%# I should add a helper to determine the proper border and link to include once I get the whole user settings stuff worked out. %>
 <% if false %>
 <span style="float:left">
         <% if @page.child1_id %>

@@ -7,6 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <style>
+      @media screen {html{min-width: 850px;}}
+    </style>
+
     <% if session[:darktheme] == true #This doesn't seem to update right away when turned off%>
       <style id="dark-reader-style" type="text/css">@media screen {
         /* Leading rule */
