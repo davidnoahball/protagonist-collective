@@ -1,6 +1,7 @@
-_end.html.erb
-
-<% if false %>
-      <b><%= @page.end %></b><br>
-      <a href=<%= @page.adventure.root_path %>>Play again?</a>
-<% end %>
+<div style="font-weight:bold; font-size:1.5em;"><%= page.end %></div>
+<br>
+<div>
+  <a class='btn btn-primary btn-lg' href=<%= @page.adventure.root_path %> role='button'>
+    <span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Play again?
+  </a>
+</div>

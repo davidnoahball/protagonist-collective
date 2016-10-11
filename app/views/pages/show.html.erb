@@ -12,15 +12,15 @@
 <div style="">
   <div class="" style="padding-bottom:100px;">
     <%= simple_format(@page.body) %>
+    <br>
   </div>
   <div class="" style="position:absolute; bottom:0; height:150px; width:calc(100% - 120px); text-align:center">
 
     <div class="" style="width:calc(100% + 120px); position:relative; top:0; right:60px; border-top: 3px solid black;">&nbsp</div>
 
-    <div class="bordered" style="">
-      <br>
+    <div class="" style="">
       <% if @page.end? %>
-        <%= render 'end' %>
+        <%= render 'end', page:@page %>
       <% else %>
         <%= render 'choices' %>
       <% end %>
