@@ -23,26 +23,7 @@
     </div>
   </nav>
 
-  <nav class="navbar navbar-default navbar-fixed-top secondary-header">
-    <div class="container secondary-vertalign">
-          <div class="secondary-left">left</div>
-          <div class="secondary-center">center</div>
-          <div class="secondary-right">right</div>
-    </div>
-  </nav>
-
-  <div class="container body-drop">
-    <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
-      <%= yield %>
-    </div>
-    <div>
-    <% 2.times do %>
-      <br>
-    <% end %>
-  </div>
-  </div>
-
-
+  <%= yield %>
 
   <nav class="footer navbar-fixed-bottom" style="background:black; border-top:1px; border-color:black; border-style:solid">
     <div class="container" style="color:#666; text-align: right">

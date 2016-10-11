@@ -19,18 +19,21 @@ a.current {
   border-style:none !important;
 }
 .secondary-left {
+  min-height: 1px;
   float: left;
   width:25%;
   text-align:left;
 }
 .secondary-center {
+  min-height: 1px;
   float: left;
   width:50%;
   text-align:center;
   font-size: 1.5em !important;
 }
 .secondary-right {
- float: left;
- width:25%;
- text-align:right;
+  min-height: 1px;
+  float: left;
+  width:25%;
+  text-align:right;
 }​

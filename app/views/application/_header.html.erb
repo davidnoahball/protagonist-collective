@@ -1,0 +1,11 @@
+<% left = " " if local_assigns[:left].nil? %>
+<% center = " " if local_assigns[:center].nil? %>
+<% right = " " if local_assigns[:right].nil? %>
+
+<nav class="navbar navbar-default navbar-fixed-top secondary-header">
+  <div class="container secondary-vertalign">
+      <div class="secondary-left"><%= left %></div>
+      <div class="secondary-center"><%= center %></div>
+      <div class="secondary-right"><%= right %></div>
+  </div>
+</nav>

@@ -1,6 +1,7 @@
+<%= render 'header', center: "Now with #{Page.word_count} words on #{Page.count} pages." %>
 
-
-Now with <%= Page.word_count %> words on <%= Page.count %> pages.
+<div class="container body-drop">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
 
 <div style="white-space:pre-wrap;">
 Hello, welcome to The Protagonist Collective!
@@ -12,6 +13,10 @@ When the site is actually published, it will have more css polishing and informa
 Besides the fact that I don't want to polish the site right now, I am also holding off on publishing the site until I learn javascript, as I believe that that is likely to make the user-experiecne of the site much nicer.
 </div>
 
-<% 10.times do %>
-  <br>
-<% end %>
+  </div>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
