@@ -1,6 +1,4 @@
-<a href=<%= adventure.root_path %>>
-  <div class="bordered">
-    <%= adventure.title %> 
-    <%= adventure.page_count %> / <%= adventure.critical_size %>
-  </div>
-</a><br>
+<a href=<%= adventure.root_path %> class="list-group-item">
+  <%= adventure.title %>
+  <span class="badge"><%= adventure.page_count %> / <%= adventure.critical_size %></span>
+</a>
