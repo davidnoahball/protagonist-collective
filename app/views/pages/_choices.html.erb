@@ -1,10 +1,30 @@
-<div style="font-weight:bold; font-size:1.5em;"><%= page.end %></div>
-<br>
+<% if page.child1_id %>
 <div>
-  <a class='btn btn-primary btn-lg' href=<%= @page.adventure.root_path %> role='button'>
-    <span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Play again?
+  <a class='btn btn-primary btn-lg' href=<%= page.child1_path %> role='button'>
+    <%= page.choice1 %>
   </a>
 </div>
+<% else %>
+<div>
+  <a class='btn btn-danger btn-lg' href=<%= new_adventure_page_path(:option => 1) %> role='button'>
+    <%= page.choice1 %>
+  </a>
+</div>
+<% end %>
+<br>
+<% if page.child2_id %>
+<div>
+  <a class='btn btn-primary btn-lg' href=<%= page.child2_path %> role='button'>
+    <%= page.choice2 %>
+  </a>
+</div>
+<% else %>
+<div>
+  <a class='btn btn-danger btn-lg' href=<%= new_adventure_page_path(:option => 2) %> role='button'>
+    <%= page.choice2 %>
+  </a>
+</div>
+<% end %>
 
 <%# I should add a helper to determine the proper border and link to include once I get the whole user settings stuff worked out. %>
 <% if false %>
