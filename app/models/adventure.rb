@@ -1,6 +1,7 @@
 class Adventure < ApplicationRecord
   has_many :pages
   has_many :users, through: :pages
+  has_many :bookmarks
   accepts_nested_attributes_for :pages
 
   def post_attributes=(attrs)

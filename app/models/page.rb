@@ -1,6 +1,7 @@
 class Page < ApplicationRecord
   belongs_to :user
   belongs_to :adventure
+  has_many :bookmarks
 
   before_validation :filter_empty
 

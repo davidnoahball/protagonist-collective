@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :pages
   has_many :adventures, through: :pages
+  has_many :bookmarks
 
   validates :name, presence: true
 

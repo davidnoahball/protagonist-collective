@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :bookmarks, only:[:create, :delete]
   resources :adventures, only: [:show, :index, :new] do
     resources :pages, only: [:show, :edit, :new, :create, :update]
+    resources :bookmarks, only:[:index]
   end
   resources :users
   #resources :pages
