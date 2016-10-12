@@ -27,19 +27,3 @@
 <% end %>
 
 <%# I should add a helper to determine the proper border and link to include once I get the whole user settings stuff worked out. %>
-<% if false %>
-<span style="float:left">
-        <% if @page.child1_id %>
-          <a href=<%= @page.child1_path %>><%= @page.choice1 %></a>
-        <% else %>
-          <ghil class="bordered"><%= link_to @page.choice1, new_adventure_page_path(:option => 1) %></ghil>
-        <% end %>
-      </span>
-      <span style="float:right">
-        <% if @page.child2_id %>
-          <a href=<%= @page.child2_path %>><%= @page.choice2 %></a>
-        <% else %>
-          <ghil class="bordered"><%= link_to @page.choice2, new_adventure_page_path(:option => 2) %></ghil>
-        <% end %>
-      </span>
-<% end %>
