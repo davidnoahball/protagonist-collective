@@ -1,6 +1,15 @@
 <div class="container body-drop">
   <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
 
+<% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
+  <% if Adventure.find(params[:adventure_id]).critical? %>
+    <div style="">This Adventure is <b>critical!</b></div>
+  <% else %>
+    <div style="">You have <b> <%= pluralize(User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])), "ending") %></b> available.</div>
+  <% end %>
+<% end %>
+<br>
+
 <% if @page && @page.errors.any? %>
   <div id="error_explanation" style="border-color:red; border-width:1px; border-style:solid; padding:2em">
     <b>
