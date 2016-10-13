@@ -1,12 +1,12 @@
 <% if page.child1_id %>
 <div>
-  <a class='btn btn-primary btn-lg' href=<%= page.child1_path %> role='button'>
+  <a class='btn btn-primary btn-lg btn-block' href=<%= page.child1_path %> role='button'>
     <%= page.choice1 %>
   </a>
 </div>
 <% else %>
 <div>
-  <a class='btn btn-danger btn-lg' href=<%= new_adventure_page_path(:option => 1) %> role='button'>
+  <a class='btn btn-danger btn-lg btn-block' href=<%= new_adventure_page_path(:option => 1) %> role='button'>
     <%= page.choice1 %>
   </a>
 </div>
@@ -14,13 +14,13 @@
 <br>
 <% if page.child2_id %>
 <div>
-  <a class='btn btn-primary btn-lg' href=<%= page.child2_path %> role='button'>
+  <a class='btn btn-primary btn-lg btn-block' href=<%= page.child2_path %> role='button'>
     <%= page.choice2 %>
   </a>
 </div>
 <% else %>
 <div>
-  <a class='btn btn-danger btn-lg' href=<%= new_adventure_page_path(:option => 2) %> role='button'>
+  <a class='btn btn-danger btn-lg btn-block' href=<%= new_adventure_page_path(:option => 2) %> role='button'>
     <%= page.choice2 %>
   </a>
 </div>
