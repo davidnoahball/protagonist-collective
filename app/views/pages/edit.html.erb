@@ -1,6 +1,5 @@
-<div class="container body-drop">
-  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
-
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
 <% if @page && @page.errors.any? %>
   <div id="error_explanation" style="border-color:red; border-width:1px; border-style:solid; padding:2em">
     <b>

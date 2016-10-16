@@ -1,5 +1,5 @@
-<div class="container body-drop">
-  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:700px">
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
 
 <% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
   <% if Adventure.find(params[:adventure_id]).critical? %>
