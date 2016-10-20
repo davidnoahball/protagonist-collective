@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   end
   resources :users
   #resources :pages
+
+  get '/spa-things/(*path)', to: 'spa_things#index'
+
   root 'site#index'
   get '/howitworks', to: 'site#howitworks'
   get '/login', to: 'users#login'

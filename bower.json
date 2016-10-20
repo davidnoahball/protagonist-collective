@@ -1,0 +1,23 @@
+{
+  "name": "protagonist-collective",
+  "homepage": "https://github.com/davidnoahball/protagonist-collective",
+  "authors": [
+    "davidnoahball <davidnoahball@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "GNU GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7"
+  }
+}
