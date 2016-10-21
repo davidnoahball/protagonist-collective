@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/spa-things/(*path)', to: 'spa_things#index'
 
-  root 'site#index'
+  root to: 'application#angular'
   get '/howitworks', to: 'site#howitworks'
   get '/login', to: 'users#login'
   post '/logout', to: 'sessions#destroy', as: 'signout'

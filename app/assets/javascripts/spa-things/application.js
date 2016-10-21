@@ -2,20 +2,27 @@
 //= require angular-ui-router
 //= require_tree .
 
-angular.module('spaThings', ['spaThings.controller'])
+angular
+  .module('spaThings', ['spaThings.controller', 'ui.router'])
   .config([
-    '$httpProvider',
     '$locationProvider',
-  function ($httpProvider, $locationProvider) {
+    '$stateProvider',
+    function ($locationProvider, $stateProvider) {
 
-    // Send CSRF token with every http request
-    $httpProvider.defaults.headers.common["X-CSRF-Token"] = $("meta[name=csrf-token]").attr("content");
-
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    });
-
-  }]);
+      $locationProvider
+        .html5Mode({
+          enabled: true,
+          requireBase: false
+        });
+///*
+      $stateProvider
+        .state('test', {
+          url: '/',
+          templateUrl: '../../views/spa_things/index.html.erb',
+          controller: 'spaThingsController'
+        })
+//*/
+    }
+  ]);
 
 //put UI-Router code here
