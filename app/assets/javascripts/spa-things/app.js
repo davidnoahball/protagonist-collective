@@ -1,9 +1,6 @@
-//= require angular
-//= require angular-ui-router
-//= require_tree .
 
 angular
-  .module('spaThings', ['spaThings.controller', 'ui.router'])
+  .module('protag', ['spaThings.controller', 'ui.router', 'templates'])
   .config([
     '$locationProvider',
     '$stateProvider',
@@ -14,15 +11,11 @@ angular
           enabled: true,
           requireBase: false
         });
-///*
       $stateProvider
-        .state('test', {
-          url: '/',
-          templateUrl: '../../views/spa_things/index.html.erb',
+        .state('home', {
+          url: '/home',
+          templateUrl: 'test.html',
           controller: 'spaThingsController'
         })
-//*/
     }
   ]);
-
-//put UI-Router code here

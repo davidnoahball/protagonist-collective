@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+get '*path', to: 'application#angular'
+
   resources :bookmarks, only:[:create, :delete]
   resources :adventures, only: [:show, :index, :new] do
     resources :pages, only: [:show, :edit, :new, :create, :update]
@@ -6,8 +9,6 @@ Rails.application.routes.draw do
   end
   resources :users
   #resources :pages
-
-  get '/spa-things/(*path)', to: 'spa_things#index'
 
   root to: 'application#angular'
   get '/howitworks', to: 'site#howitworks'
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end

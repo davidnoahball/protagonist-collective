@@ -1,75 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProtagonistCollective</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Getting Routes Working</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="protag">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= csrf_meta_tags %>
+<%= yield %>
 
-    <style>
-      @media screen {html{min-width: 850px;}}
-      @media screen {html, body{height: 100%;}}
-    </style>
-
-    <% if session[:darktheme] == true #This doesn't seem to update right away when turned off%>
-      <style id="dark-reader-style" type="text/css">@media screen {
-        /* Leading rule */
-        html {
-          -webkit-filter: invert(100%) hue-rotate(180deg) brightness(110%) contrast(90%) grayscale(20%) sepia(10%) !important;
-        }
-        /* Contrary rule */
-        img, iframe, video, *:not(object):not(body)>embed, object,
-        *[style*="background:url"]:empty, *[style*="background-image:url"]:empty,
-        *[style*="background: url"]:empty, *[style*="background-image: url"]:empty {
-          -webkit-filter: invert(100%) hue-rotate(180deg) !important;
-        }
-        /* Text contrast */
-        html {
-          text-shadow: 0 0 0 !important;
-        }
-        /* Full screen */
-        *:-webkit-full-screen, *:-webkit-full-screen * {
-          -webkit-filter: none !important;
-        }
-        /* Page background */
-        html {
-          background: rgb(13,13,13) !important;
-        }
-      }</style>
-    <% end %>
-
-  </head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="<%= root_path %>" style="color: #01D1E5">Protag.co</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><%= nav_link 'Home', root_path %></li>
-          <li><%= nav_link 'How it Works', howitworks_path %></li>
-          <li><%= nav_link 'Adventures List', '/adventures' %></li>
-
-          <% if session[:user_id] %>
-            <li><%= nav_link 'Your Profile', user_path(session[:user_id]) %></li>
-          <% else %>
-            <li><a href="/login">Login or Signup</a></li>
-          <% end %>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <%= yield %>
-
-  <nav class="footer navbar-fixed-bottom" style="background:black; border-top:1px; border-color:black; border-style:solid">
-    <div class="container" style="color:#666; text-align: right">
-      &copy; Copyright <a href="http://www.davidnoahball.com/" style="color:#666; text-decoration: underline;">David Noah Ball</a>
-    </div>
-  </nav>
 </body>
 </html>

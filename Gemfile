@@ -5,6 +5,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'omniauth'
 gem "omniauth-google-oauth2", "~> 0.2.1"
+gem 'angular-rails-templates'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
