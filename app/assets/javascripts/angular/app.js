@@ -4,7 +4,6 @@ angular
     '$locationProvider',
     '$stateProvider',
     function ($locationProvider, $stateProvider) {
-
       $locationProvider
         .html5Mode({
           enabled: true,
