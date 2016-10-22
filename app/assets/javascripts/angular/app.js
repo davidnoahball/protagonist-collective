@@ -1,4 +1,3 @@
-
 angular
   .module('protag', ['spaThings.controller', 'ui.router', 'templates'])
   .config([
