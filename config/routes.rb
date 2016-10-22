@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-get '*path', to: 'application#angular'
+get '(*path)', to: 'application#angular', constraints: lambda { |req| req.format == :html }
 
   resources :bookmarks, only:[:create, :delete]
   resources :adventures, only: [:show, :index, :new] do
