@@ -1,3 +1,33 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<%= root_path %>" style="color: #01D1E5">Protag.co</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%= nav_link 'Home', root_path %></li>
+        <li><%= nav_link 'How it Works', howitworks_path %></li>
+        <li><%= nav_link 'Adventures List', '/adventures' %></li>
+
+        <% if session[:user_id] %>
+          <li><%= nav_link 'Your Profile', user_path(session[:user_id]) %></li>
+        <% else %>
+          <li><a href="/login">Login or Signup</a></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
 <div ui-view></div>
 
-Loading ui-view
+
+
+<nav class="footer navbar-fixed-bottom" style="background:black; border-top:1px; border-color:black; border-style:solid">
+  <div class="container" style="color:#666; text-align: right">
+    &copy; Copyright <a href="http://www.davidnoahball.com/" style="color:#666; text-decoration: underline;">David Noah Ball</a>
+  </div>
+</nav>

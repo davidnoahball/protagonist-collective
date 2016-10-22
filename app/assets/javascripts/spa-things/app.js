@@ -14,6 +14,11 @@ angular
       $stateProvider
         .state('home', {
           url: '/home',
+          templateUrl: 'index.html',
+          controller: 'spaThingsController'
+        })
+        .state('test', {
+          url: '/test',
           templateUrl: 'test.html',
           controller: 'spaThingsController'
         })
