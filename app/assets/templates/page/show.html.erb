@@ -1,1 +1,100 @@
-show.html.erb
+<% 
+=begin %>
+
+
+
+<%= render 'header', 
+  left: "<a class='btn btn-primary' href='#{@page.parent_path}' role='button'>
+    <span class='glyphicon glyphicon-triangle-left' aria-hidden='true'></span> Last Page
+  </a>", 
+  center: "<a href=#{@page.adventure.root_path} style='color:white; text-decoration: underline;'>#{@page.adventure.title}</a>", 
+  right: "#{render 'bookmarks_tooltip'}"
+%>
+
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
+
+<div style="">
+  <div class="" style="padding-bottom:150px;">
+    <%= simple_format(@page.body)%><%# Can find a different formatter for this later, probably a gem %>
+    <br>
+  </div>
+  <div class="" style="position:absolute; bottom:0; height:200px; width:calc(100% - 120px); text-align:center">
+
+    <div style="height:50px; text-align:right; color:#666">
+      <% if @page.user %>
+        Written by: <a href=<%= @page.user_path %>><%= @page.user.name %></a>
+      <% end %>
+    </div>
+
+    <div class="" style="width:calc(100% + 120px); position:relative; top:50; right:60px; border-top: 3px solid black;">&nbsp</div>
+
+    <div class="" style="">
+      <% if @page.end? %>
+        <%= render 'end', page:@page %>
+      <% else %>
+        <%= render 'choices', page:@page %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+  </div> <%# Jumbotron %>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% if false %>
+
+<a href=<%= @page.adventure.root_path %>><%= @page.adventure.title %></a><br>
+<div class="bordered">
+  <br>
+  <% if @page.parent_id %>
+  <span style="float:left">
+    <a href=<%= @page.parent_path %>>Last page</a>
+  </span>
+  <% end %>
+  <% if @page.user %>
+  <span style="float:right">
+    Written by: <a href=<%= @page.user_path %>><%= @page.user.name %></a>
+  </span>
+  <% end %>
+  <div style="clear:both"><br></div>
+</div>
+
+<div class="bordered" style="width:75%; margin:auto">
+  <br>
+  <% if @page.end? %>
+    <b><%= @page.end %></b><br>
+    <a href=<%= @page.adventure.root_path %>>Play again?</a>
+  <% else %>
+    <span style="float:left">
+      <% if @page.child1_id %>
+        <a href=<%= @page.child1_path %>><%= @page.choice1 %></a>
+      <% else %>
+        <ghil class="bordered"><%= link_to @page.choice1, new_adventure_page_path(:option => 1) %></ghil>
+      <% end %>
+    </span>
+    <span style="float:right">
+      <% if @page.child2_id %>
+        <a href=<%= @page.child2_path %>><%= @page.choice2 %></a>
+      <% else %>
+        <ghil class="bordered"><%= link_to @page.choice2, new_adventure_page_path(:option => 2) %></ghil>
+      <% end %>
+    </span>
+  <% end %>
+  <div style="clear:both"><br></div>
+</div>
+
+<% end %>
+
+
+
+<% 
+=end %>

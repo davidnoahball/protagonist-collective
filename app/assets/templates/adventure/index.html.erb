@@ -1,1 +1,23 @@
-index.html.erb
+<% 
+=begin %>
+
+
+
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
+<div class="list-group">
+  <%= render(Adventure.all) %>
+</div>
+
+  </div>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% 
+=end %>

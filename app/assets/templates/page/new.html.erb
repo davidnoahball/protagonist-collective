@@ -1,1 +1,74 @@
-new.html.erb
+<% 
+=begin %>
+
+
+
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
+
+<% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
+  <% if Adventure.find(params[:adventure_id]).critical? %>
+    <div style="">This Adventure is <b>critical!</b></div>
+  <% else %>
+    <div style="">You have <b> <%= pluralize(User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])), "ending") %></b> available.</div>
+  <% end %>
+<% end %>
+<br>
+
+<% if @page && @page.errors.any? %>
+  <div id="error_explanation" style="border-color:red; border-width:1px; border-style:solid; padding:2em">
+    <b>
+      <%= pluralize(@page.errors.count, "error") %>
+      prohibited your account from being created:
+    </b>
+    <br>
+    <% @page.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+  <br>
+<% end %>
+
+<%= form_for @page, url: "/adventures/:adventure_id/pages/new" do |f| %>
+<%= f.hidden_field :adventure_id %>
+<%= f.hidden_field :parent_id %>
+<%= f.hidden_field :user_id %>
+<%= f.label "Body Text" %>
+<%= f.text_area :body %><br>
+<%= f.label "Ending" %>
+<%= f.text_field :end %><br>
+<%= f.label "Choice 1" %>
+<%= f.text_field :choice1 %><br>
+<%= f.label "Choice 2" %>
+<%= f.text_field :choice2 %><br>
+
+<%= f.submit "submit", data: {confirm: "You are about to submit. Are you sure?"} %>
+<% end %>
+
+  </div>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<% if false %>
+
+<% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
+  <% if Adventure.find(params[:adventure_id]).critical? %>
+    <li style="float:right;">This Adventure is <b>critical!</b></li>
+  <% else %>
+    <li style="float:right;">You have <b> <%= pluralize(User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])), "ending") %></b> available.</li>
+  <% end %>
+<% end %>
+
+<% end %>
+
+
+
+<% 
+=end %>

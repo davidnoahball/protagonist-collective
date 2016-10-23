@@ -1,1 +1,28 @@
-show.html.erb
+<% 
+=begin %>
+
+
+
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
+<%= @user.name %>
+<% if session[:user_id] == @user.id %>
+  <%= form_for :user, url: "/logout" do |f| %>
+    <%= f.submit "Logout" %>
+  <% end %>
+<% end %>
+<br><br>
+<%= render(@user.pages) || "No pages written yet!" %>
+
+  </div>
+  <div>
+    <% 2.times do %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% 
+=end %>
