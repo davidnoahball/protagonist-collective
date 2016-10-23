@@ -23,7 +23,7 @@ angular
         .state('adventure-index', {
           url: '/adventures',
           templateUrl: 'adventure/index.html',
-          controller: 'spaThingsController'
+          controller: 'adventureListController'
         })
         .state('adventure-new', {
           url: '/adventures/new',
