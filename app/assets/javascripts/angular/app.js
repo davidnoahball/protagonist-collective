@@ -10,14 +10,14 @@ angular
           requireBase: false
         });
       $stateProvider
-        .state('home', {
-          url: '/home',
-          templateUrl: 'index.html',
+        .state('index', {
+          url: '/',
+          templateUrl: 'site/index.html',
           controller: 'spaThingsController'
         })
-        .state('test', {
-          url: '/test',
-          templateUrl: 'test.html',
+        .state('howitworks', {
+          url: '/howitworks',
+          templateUrl: 'site/howitworks.html',
           controller: 'spaThingsController'
         })
     }

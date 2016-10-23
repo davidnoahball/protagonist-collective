@@ -1,7 +1,7 @@
 function secondHeader() {
   return {
     transclude: true,
-    templateUrl: 'second-header-template.html'
+    templateUrl: 'partials/second-header-template.html'
   };
 }
 function secondHeaderRight() {

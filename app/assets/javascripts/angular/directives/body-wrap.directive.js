@@ -1,7 +1,7 @@
 function bodyWrap() {
   return {
     transclude: true,
-    templateUrl: 'body-wrap-template.html'
+    templateUrl: 'partials/body-wrap-template.html'
   };
 }
  
