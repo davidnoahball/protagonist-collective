@@ -1,5 +1,5 @@
 function adventureService($http) {
-  this.grabIndexData = function (message) {
+  this.grabIndexData = function () {
     return $http({
       method: 'GET',
       url: '/adventures.json'

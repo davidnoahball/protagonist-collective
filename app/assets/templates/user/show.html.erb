@@ -1,3 +1,14 @@
+<div body-wrap>
+  <div>{{user.name}}</div>
+<%# Logout Placeholder %>
+  <br>
+  <div class="list-group">
+    <a href="{{page.path}}" class="list-group-item" ng-repeat="page in user.pages">
+      {{page.adventure_title}} : {{page.choice_text}}
+    </a>
+  </div>
+</div>
+
 <% 
 =begin %>
 
@@ -5,6 +16,7 @@
 
 <div class="container body-drop" style="height:100%">
   <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
+
 <%= @user.name %>
 <% if session[:user_id] == @user.id %>
   <%= form_for :user, url: "/logout" do |f| %>
@@ -21,6 +33,15 @@
     <% end %>
   </div>
 </div>
+
+
+<a href="<%= page.path %>">
+  <div class="bordered">
+    <%= page.id %>
+    <%= page.adventure.title %>
+    <%= page.choice_text %>
+  </div>
+</a><br>
 
 
 

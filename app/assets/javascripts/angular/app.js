@@ -48,7 +48,7 @@ angular
         .state('user-show', {
           url: '/users/:us_id',
           templateUrl: 'user/show.html',
-          controller: 'spaThingsController'
+          controller: 'userShowController'
         })
     }
   ]);
