@@ -12,9 +12,11 @@ class Adventure < ApplicationRecord
     end
   end
 
-  def root_path #I originally thought that this was just "/adventures/#{self.id}/pages/1". Glad I abstracted it!
+  def root
     root = self.pages.where("parent_id IS NULL").ids[0]
-    "/adventures/#{self.id}/pages/#{root}"
+  end
+  def root_path #I originally thought that this was just "/adventures/#{self.id}/pages/1". Glad I abstracted it!
+    "/adventures/#{self.id}/pages/#{self.root}"
   end
   def page_count
     self.pages.all.count

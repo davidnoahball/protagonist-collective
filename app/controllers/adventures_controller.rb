@@ -1,5 +1,6 @@
 class AdventuresController < ApplicationController
   def index
+    @adventures = Adventure.all
   end
   def show
     redirect_to Adventure.find(params[:id]).root_path

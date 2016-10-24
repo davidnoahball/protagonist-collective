@@ -117,6 +117,8 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     puma (3.6.0)
+    rabl (0.13.1)
+      activesupport (>= 2.3.14)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -202,6 +204,7 @@ DEPENDENCIES
   omniauth
   omniauth-google-oauth2 (~> 0.2.1)
   puma (~> 3.0)
+  rabl
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)
   spring
