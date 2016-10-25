@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/test', to: 'application#test'
   get '(*path)', to: 'application#angular', constraints: lambda { |req| req.format == :html }
 
+  get '/index', to: 'application#index'
+
   resources :bookmarks, only:[:create, :delete]
   resources :adventures, only: [:show, :index, :new] do
     resources :pages, only: [:show, :edit, :new, :create, :update]

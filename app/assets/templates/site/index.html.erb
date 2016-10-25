@@ -1,15 +1,35 @@
 <div second-header>
-  <div second-header-left>left</div>
-  <div second-header-center>center</div>
-  <div second-header-right>right</div>
+  <div second-header-left></div>
+  <div second-header-center>Now with {{stats.words}} words on {{stats.pages}} pages.</div>
+  <div second-header-right></div>
 </div>
 
 <div body-wrap>
-  <section ng-controller="spaThingsController">
-    <ul>
-      <li ng-repeat="thing in things">
-        {{thing.name}}
-      </li>
-    </ul>
-  </section>
+  <div style="white-space:pre-wrap;">Hello, welcome to The Protagonist Collective!
+
+This is a site where people can come to read and participate in the building of "Choose Your Own Adventure" stories.
+
+When the site is actually published, it will have more css polishing and information on the Index and HowItWorks pages, but for now the purpose of this site has been fulfilled: to develop and demonstrate an understanding of the Ruby on Rails framework.
+
+Besides the fact that I don't want to polish the site right now, I am also holding off on publishing the site until I learn javascript, as I believe that that is likely to make the user-experiecne of the site much nicer.
+  </div>
 </div>
+
+<% 
+=begin %>
+
+<%= render 'header', center: "Now with #{Page.word_count} words on #{Page.count} pages." %>
+
+<div class="container body-drop" style="height:100%">
+  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
+<div style="white-space:pre-wrap;">Hello, welcome to The Protagonist Collective!
+
+This is a site where people can come to read and participate in the building of "Choose Your Own Adventure" stories.
+
+When the site is actually published, it will have more css polishing and information on the Index and HowItWorks pages, but for now the purpose of this site has been fulfilled: to develop and demonstrate an understanding of the Ruby on Rails framework.
+
+Besides the fact that I don't want to polish the site right now, I am also holding off on publishing the site until I learn javascript, as I believe that that is likely to make the user-experiecne of the site much nicer.
+</div>
+
+<% 
+=end %>

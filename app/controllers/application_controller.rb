@@ -5,5 +5,8 @@ class ApplicationController < ActionController::Base
   end
   def test
   end
+  def index
+    @page = Page.first
+  end
   
 end

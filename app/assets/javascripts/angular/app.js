@@ -13,7 +13,7 @@ angular
         .state('index', {
           url: '/',
           templateUrl: 'site/index.html',
-          controller: 'spaThingsController'
+          controller: 'indexController'
         })
         .state('howitworks', {
           url: '/howitworks',
