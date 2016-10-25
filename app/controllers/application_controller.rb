@@ -3,5 +3,7 @@ class ApplicationController < ActionController::Base
 
   def angular
   end
+  def test
+  end
   
 end
