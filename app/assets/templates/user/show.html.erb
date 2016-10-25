@@ -5,12 +5,13 @@
   <input type="search" ng-model="q" placeholder="Search pages..."/>
   <br><br>
   <div class="list-group">
+    <div class="list-group-item">
+      <strong>{{results.length}} pages found...</strong>
+    </div>
     <a href="{{page.path}}" class="list-group-item" ng-repeat="page in user.pages | filter:q as results">
       {{page.adventure_title}} : {{page.choice_text}}
     </a>
-    <div class="list-group-item" ng-if="results.length === 0">
-      <strong>No pages found...</strong>
-    </div>
+
   </div>
 </div>
 
