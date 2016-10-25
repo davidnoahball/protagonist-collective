@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-get '/test', to: 'application#test'
-get '(*path)', to: 'application#angular', constraints: lambda { |req| req.format == :html }
+  resources :sessions, only: [:create, :destroy]
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+
+  get '/test', to: 'application#test'
+  get '(*path)', to: 'application#angular', constraints: lambda { |req| req.format == :html }
 
   resources :bookmarks, only:[:create, :delete]
   resources :adventures, only: [:show, :index, :new] do

@@ -43,7 +43,7 @@ angular
         .state('login', {
           url: '/login',
           templateUrl: 'user/login.html',
-          controller: 'spaThingsController'
+          controller: 'loginController'
         })
         .state('user-show', {
           url: '/users/:us_id',
