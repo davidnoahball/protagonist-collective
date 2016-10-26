@@ -2,4 +2,4 @@ collection @adventures
 attributes :id, :title, :critical_size
 node(:root) {|adventure| adventure.root}
 node(:page_count) {|adventure| adventure.page_count}
-node(:status) {|adventure| adventure.status}
+node(:statuses) {|adventure| adventure.statuses}

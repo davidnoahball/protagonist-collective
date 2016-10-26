@@ -5,6 +5,19 @@ function adventureIndexController($scope, adventureService) {
       $scope.adventures = res.data;
     });
 
+  $scope.checkboxFilter = function(adventure) { //Should abstract this later
+      for(status in $scope.statusArray){
+          var s = $scope.statusArray[status];
+          if(s.on && adventure.statuses.indexOf(s.name) > -1){
+              return true;
+          }
+      }
+  };
+  $scope.statusArray = [
+    {name: "open", on: true},
+    {name: "critical", on: true},
+    {name: "closed", on: true}
+  ]
 }
 
 angular

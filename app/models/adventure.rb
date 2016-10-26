@@ -34,14 +34,17 @@ class Adventure < ApplicationRecord
     end
     complete
   end
-  def status
+  def statuses
+    statuses = []
     if self.complete
-      return "closed"
+      statuses << "closed"
+    else
+      statuses << "open"
     end
     if self.critical?
-      return "critical"
+      statuses << "critical"
     end
-    return "open"
+    statuses
   end
 end
 #open, closed, critical

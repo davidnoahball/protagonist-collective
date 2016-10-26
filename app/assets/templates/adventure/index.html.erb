@@ -1,6 +1,12 @@
 <div body-wrap>
   <div class="list-group">
-    <a href="/adventures/{{adventure.id}}/pages/{{adventure.root}}" class="list-group-item" ng-repeat="adventure in adventures">
+    <div class="list-group-item">
+      <span ng-repeat="stat in statusArray">
+          <input type="checkbox" ng-model="stat.on"/>
+          &nbsp; {{stat.name}} &nbsp; &nbsp; &nbsp; &nbsp;
+      </span>
+    </div>
+    <a href="/adventures/{{adventure.id}}/pages/{{adventure.root}}" class="list-group-item ng-scope" ng-repeat="adventure in adventures | filter:checkboxFilter">
       {{adventure.title}}
       <span class="badge">{{adventure.page_count}} / {{adventure.critical_size}}</span>
     </a>
