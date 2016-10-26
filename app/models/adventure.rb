@@ -38,11 +38,10 @@ class Adventure < ApplicationRecord
     statuses = []
     if self.complete
       statuses << "closed"
+    elsif self.critical?
+      statuses << "critical"
     else
       statuses << "open"
-    end
-    if self.critical?
-      statuses << "critical"
     end
     statuses
   end
