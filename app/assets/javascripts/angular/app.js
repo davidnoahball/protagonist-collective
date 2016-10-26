@@ -25,11 +25,6 @@ angular
           templateUrl: 'adventure/index.html',
           controller: 'adventureIndexController'
         })
-        .state('adventure-new', {
-          url: '/adventures/new',
-          templateUrl: 'adventure/new.html',
-          controller: 'spaThingsController'
-        })
         .state('page-new', {
           url: '/adventures/:ad_id/pages/new',
           templateUrl: 'page/new.html',
