@@ -1,7 +1,22 @@
+
+
 <% 
 =begin %>
 
-
+-page.parent_path
+-page.adventure.root_path
+-page.adventure.title
+-page.body
+-page.user
+-page.user_path
+-page.user.name
+-page.child1_id
+-page.child2_id
+-page.child1_path
+-page.child2_path
+-page.choice1
+-page.choice2
+-page.end
 
 <%= render 'header', 
   left: "<a class='btn btn-primary' href='#{@page.parent_path}' role='button'>
@@ -48,52 +63,45 @@
   </div>
 </div>
 
+//Partials
 
-
-<% if false %>
-
-<a href=<%= @page.adventure.root_path %>><%= @page.adventure.title %></a><br>
-<div class="bordered">
-  <br>
-  <% if @page.parent_id %>
-  <span style="float:left">
-    <a href=<%= @page.parent_path %>>Last page</a>
-  </span>
-  <% end %>
-  <% if @page.user %>
-  <span style="float:right">
-    Written by: <a href=<%= @page.user_path %>><%= @page.user.name %></a>
-  </span>
-  <% end %>
-  <div style="clear:both"><br></div>
+//Choices
+<% if page.child1_id %>
+<div>
+  <a class='btn btn-primary btn-lg btn-block' href=<%= page.child1_path %> role='button'>
+    <%= page.choice1 %>
+  </a>
 </div>
-
-<div class="bordered" style="width:75%; margin:auto">
-  <br>
-  <% if @page.end? %>
-    <b><%= @page.end %></b><br>
-    <a href=<%= @page.adventure.root_path %>>Play again?</a>
-  <% else %>
-    <span style="float:left">
-      <% if @page.child1_id %>
-        <a href=<%= @page.child1_path %>><%= @page.choice1 %></a>
-      <% else %>
-        <ghil class="bordered"><%= link_to @page.choice1, new_adventure_page_path(:option => 1) %></ghil>
-      <% end %>
-    </span>
-    <span style="float:right">
-      <% if @page.child2_id %>
-        <a href=<%= @page.child2_path %>><%= @page.choice2 %></a>
-      <% else %>
-        <ghil class="bordered"><%= link_to @page.choice2, new_adventure_page_path(:option => 2) %></ghil>
-      <% end %>
-    </span>
-  <% end %>
-  <div style="clear:both"><br></div>
+<% else %>
+<div>
+  <a class='btn btn-danger btn-lg btn-block' href=<%= new_adventure_page_path(:option => 1) %> role='button'>
+    <%= page.choice1 %>
+  </a>
 </div>
-
+<% end %>
+<br>
+<% if page.child2_id %>
+<div>
+  <a class='btn btn-primary btn-lg btn-block' href=<%= page.child2_path %> role='button'>
+    <%= page.choice2 %>
+  </a>
+</div>
+<% else %>
+<div>
+  <a class='btn btn-danger btn-lg btn-block' href=<%= new_adventure_page_path(:option => 2) %> role='button'>
+    <%= page.choice2 %>
+  </a>
+</div>
 <% end %>
 
+//End
+<div style="font-weight:bold; font-size:1.5em;"><%= page.end %></div>
+<br>
+<div>
+  <a class='btn btn-primary btn-lg' href=<%= @page.adventure.root_path %> role='button'>
+    <span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Play again?
+  </a>
+</div>
 
 
 <% 
