@@ -27,105 +27,39 @@
       </div>
     </div>
 
-    <div style="width:calc(100% + 120px); position:relative; top:50; right:60px; border-top: 3px solid black;">&nbsp</div>
+    <div style="width:calc(100% + 120px); position:relative; top:50; right:60px; border-top: 3px solid black;">&nbsp</div> <%# bottom section %>
+      <div ng-if="page.end == null">
+        <div ng-if="page.child1_id != nil">
+          <a class='btn btn-primary btn-lg btn-block' href="{{page.child1_path}}" role='button'>
+            {{page.choice1}}
+          </a>
+        </div>
+        <div ng-if="page.child1_id == nil">
+          <a class='btn btn-danger btn-lg btn-block' href="/adventures/{{page.adventure_id}}/pages/new?option=1" role='button'>
+            {{page.choice1}}
+          </a>
+        </div>
+        <br>
+        <div ng-if="page.child2_id != nil">
+          <a class='btn btn-primary btn-lg btn-block' href="{{page.child2_path}}" role='button'>
+            {{page.choice2}}
+          </a>
+        </div>
+        <div ng-if="page.child2_id == nil">
+          <a class='btn btn-danger btn-lg btn-block' href="/adventures/{{page.adventure_id}}/pages/new?option=2" role='button'>
+            {{page.choice2}}
+          </a>
+        </div>
+      </div> <%# ng-if page.end==null %>
 
-Ends and Choices Placeholder
-  </div>
-
-</div>
-
-<% 
-=begin %>
-
-    <div>
-      <% if @page.end? %>
-        <%= render 'end', page:@page %>
-      <% else %>
-        <%= render 'choices', page:@page %>
-      <% end %>
-    </div>
-
--page.parent_path
--page.adventure.root_path
--page.adventure.title
--page.body
--page.user
--page.user_path
--page.user.name
--page.child1_id
--page.child2_id
--page.child1_path
--page.child2_path
--page.choice1
--page.choice2
--page.end
-
-<div style="">
-  <div class="" style="padding-bottom:150px;">
-    <%= simple_format(@page.body)%><%# Can find a different formatter for this later, probably a gem %>
-    <br>
-  </div>
-  <div class="" style="position:absolute; bottom:0; height:200px; width:calc(100% - 120px); text-align:center">
-
-    <div style="height:50px; text-align:right; color:#666">
-      <% if @page.user %>
-        Written by: <a href=<%= @page.user_path %>><%= @page.user.name %></a>
-      <% end %>
-    </div>
-
-    <div class="" style="width:calc(100% + 120px); position:relative; top:50; right:60px; border-top: 3px solid black;">&nbsp</div>
-
-    <div class="" style="">
-      <% if @page.end? %>
-        <%= render 'end', page:@page %>
-      <% else %>
-        <%= render 'choices', page:@page %>
-      <% end %>
-    </div>
-
-  </div>
-</div>
-
-//Partials
-
-//Choices
-<% if page.child1_id %>
-<div>
-  <a class='btn btn-primary btn-lg btn-block' href=<%= page.child1_path %> role='button'>
-    <%= page.choice1 %>
-  </a>
-</div>
-<% else %>
-<div>
-  <a class='btn btn-danger btn-lg btn-block' href=<%= new_adventure_page_path(:option => 1) %> role='button'>
-    <%= page.choice1 %>
-  </a>
-</div>
-<% end %>
-<br>
-<% if page.child2_id %>
-<div>
-  <a class='btn btn-primary btn-lg btn-block' href=<%= page.child2_path %> role='button'>
-    <%= page.choice2 %>
-  </a>
-</div>
-<% else %>
-<div>
-  <a class='btn btn-danger btn-lg btn-block' href=<%= new_adventure_page_path(:option => 2) %> role='button'>
-    <%= page.choice2 %>
-  </a>
-</div>
-<% end %>
-
-//End
-<div style="font-weight:bold; font-size:1.5em;"><%= page.end %></div>
-<br>
-<div>
-  <a class='btn btn-primary btn-lg' href=<%= @page.adventure.root_path %> role='button'>
-    <span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Play again?
-  </a>
-</div>
-
-
-<% 
-=end %>
+      <div ng-if="page.end != null">
+        <div style="font-weight:bold; font-size:1.5em;">{{page.end}}</div>
+        <br>
+        <div>
+          <a class='btn btn-primary btn-lg' href={{page.adventure_root_path}} role='button'>
+            <span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Play again?
+          </a>
+        </div>
+      </div>
+  </div> <%# bottom section %>
+</div> <%# body-wrap %>

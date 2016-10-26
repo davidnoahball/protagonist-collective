@@ -2,6 +2,7 @@ object @page
 node(:parent_path) {|page| page.parent_path}
 node(:adventure_root_path) {|page| page.adventure.root_path}
 node(:adventure_title) {|page| page.adventure.title}
+node(:adventure_id) {|page| page.adventure.id}
 node(:body) {|page| page.body}
 node(:user) {|page| page.user}
 node(:user_path) {|page| page.user_path}
