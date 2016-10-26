@@ -7,7 +7,8 @@ Specs:
   - Nested html via custom directives such as 'body-wrap' and 'second-header' in app/assets/javascripts/angular/directives
 - [x] Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due
   - See Adventure Index and User Show
-- [ ] Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
+- [x] Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
+  - Updating search results count and index data
 - [x] Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product
   - All links work correctly
 - [ ] Data should be validated in Angular before submission
