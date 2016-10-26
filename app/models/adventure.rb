@@ -24,4 +24,24 @@ class Adventure < ApplicationRecord
   def critical?
     self.page_count >= self.critical_size
   end
+  def complete
+    complete = true
+    self.pages.all.each do |page|
+      if !page.end?
+        complete = false
+        break
+      end
+    end
+    complete
+  end
+  def status
+    if self.complete
+      return "closed"
+    end
+    if self.critical?
+      return "critical"
+    end
+    return "open"
+  end
 end
+#open, closed, critical
