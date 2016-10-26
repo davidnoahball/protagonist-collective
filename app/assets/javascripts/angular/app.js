@@ -33,7 +33,7 @@ angular
         .state('page-show', {
           url: '/adventures/:ad_id/pages/:pg_id',
           templateUrl: 'page/show.html',
-          controller: 'spaThingsController'
+          controller: 'pageShowController'
         })
         .state('login', {
           url: '/login',
