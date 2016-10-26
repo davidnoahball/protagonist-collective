@@ -1,9 +1,49 @@
+<div second-header>
+  <div second-header-left>
+  <a class='btn btn-primary' href='{{page.parent_path}}' role='button'>
+    <span class='glyphicon glyphicon-triangle-left' aria-hidden='true'></span> Last Page
+  </a>
+  </div>
+  <div second-header-center>
+    <a href="{{page.adventure_root_path}}" style='color:white; text-decoration: underline;'>
+      {{page.adventure_title}}
+    </a>
+  </div>
+  <div second-header-right>
+    Bookmarks Placeholder
+  </div>
+</div>
+
 <div body-wrap>
-  {{page.choice1}}
+  <div class="" style="padding-bottom:150px; font-size:1.4em">
+    {{page.body}} <%# Can find a formatter for this later, probably a gem %>
+    <br>
+  </div>
+
+  <div style="position:absolute; bottom:0; height:200px; width:calc(100% - 120px); text-align:center">
+    <div style="height:50px; text-align:right; color:#666">
+      <div ng-if="page.user != null">
+        Written by: <a href="{{page.user_path}}">{{page.user_name}}</a>
+      </div>
+    </div>
+
+    <div style="width:calc(100% + 120px); position:relative; top:50; right:60px; border-top: 3px solid black;">&nbsp</div>
+
+Ends and Choices Placeholder
+  </div>
+
 </div>
 
 <% 
 =begin %>
+
+    <div>
+      <% if @page.end? %>
+        <%= render 'end', page:@page %>
+      <% else %>
+        <%= render 'choices', page:@page %>
+      <% end %>
+    </div>
 
 -page.parent_path
 -page.adventure.root_path
@@ -19,17 +59,6 @@
 -page.choice1
 -page.choice2
 -page.end
-
-<%= render 'header', 
-  left: "<a class='btn btn-primary' href='#{@page.parent_path}' role='button'>
-    <span class='glyphicon glyphicon-triangle-left' aria-hidden='true'></span> Last Page
-  </a>", 
-  center: "<a href=#{@page.adventure.root_path} style='color:white; text-decoration: underline;'>#{@page.adventure.title}</a>", 
-  right: "#{render 'bookmarks_tooltip'}"
-%>
-
-<div class="container body-drop" style="height:100%">
-  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
 
 <div style="">
   <div class="" style="padding-bottom:150px;">
@@ -54,14 +83,6 @@
       <% end %>
     </div>
 
-  </div>
-</div>
-
-  </div> <%# Jumbotron %>
-  <div>
-    <% 2.times do %>
-      <br>
-    <% end %>
   </div>
 </div>
 

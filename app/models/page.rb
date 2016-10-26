@@ -62,7 +62,14 @@ class Page < ApplicationRecord
     "/adventures/#{self.adventure.id}/pages/#{self.child2_id}"
   end
   def user_path
-    "/users/#{self.user.id}"
+    if self.user
+      "/users/#{self.user.id}"
+    end
+  end
+  def user_name
+    if self.user
+      self.user.name
+    end
   end
   def parent
     Page.all.find(self.parent_id)

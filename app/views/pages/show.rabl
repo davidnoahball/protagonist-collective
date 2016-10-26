@@ -5,7 +5,7 @@ node(:adventure_title) {|page| page.adventure.title}
 node(:body) {|page| page.body}
 node(:user) {|page| page.user}
 node(:user_path) {|page| page.user_path}
-node(:user_name) {|page| page.user.name}
+node(:user_name) {|page| page.user_name}
 node(:child1_id) {|page| page.child1_id}
 node(:child2_id) {|page| page.child2_id}
 node(:child1_path) {|page| page.child1_path}
