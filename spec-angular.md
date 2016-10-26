@@ -5,7 +5,8 @@ Specs:
   - All html frontend requests are directed through Angular via app/assets/javascripts/app.js
 - [x] Must contain some sort of nested views
   - Nested html via custom directives such as 'body-wrap' and 'second-header' in app/assets/javascripts/angular/directives
-- [ ] Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due
+- [x] Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due
+  - See Adventure Index and User Show
 - [ ] Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
 - [x] Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product
   - All links work correctly
