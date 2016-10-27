@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     if !(session[:user_id])
       @page.errors.add(:body, :not_valid, message: ": You must be logged in to write a new page!")
     end
+    @page.user_id = session[:user_id]
     par = @page.adventure.pages.find(@page.parent_id)
     if (par.child1_id != nil && pages_params[:which_child] == "1") || (par.child2_id != nil && pages_params[:which_child] == "2")
       return redirect_to "/"
@@ -27,8 +28,7 @@ class PagesController < ApplicationController
     else
       return puts "Failed!"
     end
-
-    redirect_to @page.path
+    render :text => @page.id
   end
   def edit
     if User.find(session[:user_id]).usertype == 0

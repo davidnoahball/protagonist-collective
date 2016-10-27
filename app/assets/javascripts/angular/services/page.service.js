@@ -6,7 +6,7 @@ function pageService($http) {
     });
   };
   this.postPageData = function (ad_id, pageData) {
-    $http({
+    return $http({
       method: 'POST',
       url: ('/adventures/' + ad_id.toString() + '/pages/new'),
       data: pageData

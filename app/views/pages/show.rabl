@@ -1,4 +1,5 @@
 object @page
+node(:id) {|page| page.id}
 node(:parent_path) {|page| page.parent_path}
 node(:adventure_root_path) {|page| page.adventure.root_path}
 node(:adventure_title) {|page| page.adventure.title}

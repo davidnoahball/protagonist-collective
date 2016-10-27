@@ -35,7 +35,7 @@
           </a>
         </div>
         <div ng-if="page.child1_id == nil">
-          <a class='btn btn-danger btn-lg btn-block' href="/adventures/{{page.adventure_id}}/pages/new/1" role='button'>
+          <a class='btn btn-danger btn-lg btn-block' href="/adventures/{{page.adventure_id}}/pages/new/1/{{page.id}}" role='button'>
             {{page.choice1}}
           </a>
         </div>
@@ -46,7 +46,7 @@
           </a>
         </div>
         <div ng-if="page.child2_id == nil">
-          <a class='btn btn-danger btn-lg btn-block' href="/adventures/{{page.adventure_id}}/pages/new/2" role='button'>
+          <a class='btn btn-danger btn-lg btn-block' href="/adventures/{{page.adventure_id}}/pages/new/2/{{page.id}}" role='button'>
             {{page.choice2}}
           </a>
         </div>
