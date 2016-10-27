@@ -1,10 +1,28 @@
+<div body-wrap>
+
+  <form ng-submit="submitData()">
+    <input class="btn-primary" type="submit">
+  </form>
+
+</div>
+
 <% 
 =begin %>
 
 
+{"utf8"=>"✓",
+ "authenticity_token"=>"u46vgibuIviwdEEHvkjgStTcR3bLGsRhCUw+cHp947Z1GeM4qNQ+xq32mrrHld/eRmJkR0nCDYPh8R/JRy2qkw==",
+ "page"=>
+  {"adventure_id"=>"",
+   "parent_id"=>"1",
+   "user_id"=>"2",
+   "body"=>"thlejrg lkaj rglkjhaelkrjghl akjerhg klajeh rgklja eklrjghekajrhg klajhrgk jahe rgkjha elkrjgh lkaje lrkgjh alkejhr glkajherlkgj alekjrghlae",
+   "end"=>"",
+   "choice1"=>"flkjaherlkfja elrgkjhaer",
+   "choice2"=>"kjhlekrgjha lrkejagh"},
+ "commit"=>"submit",
+ "adventure_id"=>":adventure_id"}
 
-<div class="container body-drop" style="height:100%">
-  <div class="jumbotron" style="border-style:solid; border-color:black; border-width:3px; min-height:calc(100% - 200px); position:relative">
 
 <% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
   <% if Adventure.find(params[:adventure_id]).critical? %>
@@ -14,20 +32,6 @@
   <% end %>
 <% end %>
 <br>
-
-<% if @page && @page.errors.any? %>
-  <div id="error_explanation" style="border-color:red; border-width:1px; border-style:solid; padding:2em">
-    <b>
-      <%= pluralize(@page.errors.count, "error") %>
-      prohibited your account from being created:
-    </b>
-    <br>
-    <% @page.errors.full_messages.each do |msg| %>
-      <%= msg %><br>
-    <% end %>
-  </div>
-  <br>
-<% end %>
 
 <%= form_for @page, url: "/adventures/:adventure_id/pages/new" do |f| %>
 <%= f.hidden_field :adventure_id %>
@@ -45,30 +49,25 @@
 <%= f.submit "submit", data: {confirm: "You are about to submit. Are you sure?"} %>
 <% end %>
 
-  </div>
-  <div>
-    <% 2.times do %>
-      <br>
-    <% end %>
-  </div>
 </div>
 
 
 
+<form class="new_page ng-pristine ng-valid" id="new_page" action="/adventures/:adventure_id/pages/new" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="u46vgibuIviwdEEHvkjgStTcR3bLGsRhCUw+cHp947Z1GeM4qNQ+xq32mrrHld/eRmJkR0nCDYPh8R/JRy2qkw==">
+<input type="hidden" name="page[adventure_id]" id="page_adventure_id">
+<input type="hidden" value="1" name="page[parent_id]" id="page_parent_id">
+<input type="hidden" value="2" name="page[user_id]" id="page_user_id">
+<label for="page_Body Text">Body text</label>
+<textarea name="page[body]" id="page_body" style="margin: 0px; height: 97px; width: 161px;"></textarea><br>
+<label for="page_Ending">Ending</label>
+<input type="text" name="page[end]" id="page_end"><br>
+<label for="page_Choice 1">Choice 1</label>
+<input type="text" name="page[choice1]" id="page_choice1"><br>
+<label for="page_Choice 2">Choice 2</label>
+<input type="text" name="page[choice2]" id="page_choice2"><br>
 
-<% if false %>
-
-<% if params[:adventure_id] && params[:adventure_id] != "new" && params[:adventure_id] != ":adventure_id" && session[:user_id] %>
-  <% if Adventure.find(params[:adventure_id]).critical? %>
-    <li style="float:right;">This Adventure is <b>critical!</b></li>
-  <% else %>
-    <li style="float:right;">You have <b> <%= pluralize(User.find(session[:user_id]).ends_available(Adventure.find(params[:adventure_id])), "ending") %></b> available.</li>
-  <% end %>
-<% end %>
-
-<% end %>
-
-
+<input type="submit" name="commit" value="submit" data-confirm="You are about to submit. Are you sure?" data-disable-with="submit">
+</form>
 
 <% 
 =end %>

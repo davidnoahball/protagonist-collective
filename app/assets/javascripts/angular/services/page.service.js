@@ -5,6 +5,14 @@ function pageService($http) {
       url: ('/adventures/' + ad_id.toString() + '/pages/' + pg_id.toString() + '.json')
     });
   };
+  this.postPageData = function (ad_id, pageData) {
+    $http({
+      method: 'POST',
+      url: ('/adventures/' + ad_id.toString() + '/pages/new'),
+      data: pageData
+    });
+  };
+
 }
 
 angular

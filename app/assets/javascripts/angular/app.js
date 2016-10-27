@@ -26,9 +26,9 @@ angular
           controller: 'adventureIndexController'
         })
         .state('page-new', {
-          url: '/adventures/:ad_id/pages/new',
+          url: '/adventures/:ad_id/pages/new/:which_child',
           templateUrl: 'page/new.html',
-          controller: 'spaThingsController'
+          controller: 'pageNewController'
         })
         .state('page-show', {
           url: '/adventures/:ad_id/pages/:pg_id',

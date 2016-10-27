@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "ng-rails-csrf"
 gem 'rabl'
 gem "bower-rails"
 gem 'bootstrap-sass'
