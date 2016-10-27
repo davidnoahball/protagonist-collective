@@ -1,5 +1,5 @@
 angular
-  .module('protag', ['spaThings.controller', 'ui.router', 'templates'])
+  .module('protag', ['spaThings.controller', 'ui.router', 'templates', 'ngMessages'])
   .config([
     '$locationProvider',
     '$stateProvider',

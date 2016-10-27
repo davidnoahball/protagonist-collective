@@ -1,8 +1,12 @@
 <div body-wrap ng-scope>
 
-  <form ng-submit="submitData()">
+  <form ng-submit="submitData()" name="form">
     <label>Body text</label>
-    <textarea ng-model="pageData.page.body" name="page[body]" id="page_body" style="margin: 0px; height: 97px; width: 161px;"></textarea><br>
+    <textarea ng-model="pageData.page.body" name="body" style="margin: 0px; height: 97px; width: 161px;"
+      required="required"></textarea><br>
+    <div ng-messages="form.body.$error">
+      <div ng-message="required">Body is required</div></div>
+
     <label>Ending</label>
     <input ng-model="pageData.page.end" type="text"><br>
     <label>Choice 1</label>
