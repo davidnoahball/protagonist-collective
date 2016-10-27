@@ -1,6 +1,14 @@
-<div body-wrap>
+<div body-wrap ng-scope>
 
   <form ng-submit="submitData()">
+    <label>Body text</label>
+    <textarea ng-model="pageData.page.body" name="page[body]" id="page_body" style="margin: 0px; height: 97px; width: 161px;"></textarea><br>
+    <label>Ending</label>
+    <input ng-model="pageData.page.end" type="text"><br>
+    <label>Choice 1</label>
+    <input ng-model="pageData.page.choice1" type="text"><br>
+    <label>Choice 2</label>
+    <input ng-model="pageData.page.choice2" type="text"><br>
     <input class="btn-primary" type="submit">
   </form>
 

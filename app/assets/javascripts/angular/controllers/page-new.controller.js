@@ -13,7 +13,7 @@ function pageNewController($scope, $stateParams, $state, pageService) {
     "page": {
       "adventure_id": $stateParams.ad_id, //comes from url
       "parent_id": $stateParams.parent_id, //comes from url
-      "user_id": "2", //changed in backend controller
+      "user_id": "", //changed in backend controller
       "body": "thlejrg lkaj rglkjhaelkrjghl akjerhg klajeh rgklja eklrjghekajrhg klajhrgk jahe rgkjha elkrjgh lkaje lrkgjh alkejhr glkajherlkgj alekjrghlae", //input
       "end": "", //input
       "choice1": "flkjaherlkfja elrgkjhaer", //input
