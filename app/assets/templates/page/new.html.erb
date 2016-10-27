@@ -1,18 +1,26 @@
 <div body-wrap ng-scope>
 
   <form ng-submit="submitData()" name="form">
-    <label>Body text</label>
+
+    <label>Body text</label> <%# I should abstract this into an ng-repeat later %>
     <textarea ng-model="pageData.page.body" name="body" style="margin: 0px; height: 97px; width: 161px;"
-      required="required"></textarea><br>
-    <div ng-messages="form.body.$error">
-      <div ng-message="required">Body is required</div></div>
+      required="required" minlength="60" maxlength="1000"></textarea><br>
+    <div ng-messages="form.body.$error" ng-if="form.body.$touched">
+      <div ng-message="required" class="bordered">Body is required</div>
+      <div ng-message="minlength" class="bordered">Must be at least 60 characters</div></div>
 
     <label>Ending</label>
-    <input ng-model="pageData.page.end" type="text"><br>
+    <input ng-model="pageData.page.end" name="end" type="text"
+      maxlength="60"><br>
+
     <label>Choice 1</label>
-    <input ng-model="pageData.page.choice1" type="text"><br>
+    <input ng-model="pageData.page.choice1" name="choice1" type="text"
+      maxlength="60"><br>
+
     <label>Choice 2</label>
-    <input ng-model="pageData.page.choice2" type="text"><br>
+    <input ng-model="pageData.page.choice2" name="choice2" type="text"
+      maxlength="60"><br>
+
     <input class="btn-primary" type="submit">
   </form>
 

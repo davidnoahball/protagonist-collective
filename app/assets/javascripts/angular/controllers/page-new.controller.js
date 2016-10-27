@@ -14,10 +14,10 @@ function pageNewController($scope, $stateParams, $state, pageService) {
       "adventure_id": $stateParams.ad_id, //comes from url
       "parent_id": $stateParams.parent_id, //comes from url
       "user_id": "", //changed in backend controller
-      "body": "thlejrg lkaj rglkjhaelkrjghl akjerhg klajeh rgklja eklrjghekajrhg klajhrgk jahe rgkjha elkrjgh lkaje lrkgjh alkejhr glkajherlkgj alekjrghlae", //input
+      "body": "", //input
       "end": "", //input
-      "choice1": "flkjaherlkfja elrgkjhaer", //input
-      "choice2": "kjhlekrgjha lrkejagh", //input
+      "choice1": "", //input
+      "choice2": "", //input
       "which_child": $stateParams.which_child //comes from url
     }
   };

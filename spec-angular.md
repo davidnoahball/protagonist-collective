@@ -11,7 +11,8 @@ Specs:
   - Updating search results count and index data
 - [x] Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product
   - All links work correctly
-- [ ] Data should be validated in Angular before submission
+- [x] Data should be validated in Angular before submission
+  - Page New uses Angular validations
 - [x] Must talk to the Rails backend using $http and Services
   - Angular frontent on /adventures talks to Rails backend on /adventures.json through app/assets/javascripts/angular/services/adventure.service.js
 - [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
